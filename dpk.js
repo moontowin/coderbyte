@@ -22,3 +22,8 @@ exports.deterministicPartitionKey = (event) => {
   
   return candidate;
 };
+
+// Simplification of the 'candidate' variable assignment logic. Instead of nesting 'if' statements, I use an if-else if-else statement to assign candidate based on the presence of event.partitionKey.
+// Moving the 'TRIVIAL_PARTITION_KEY' and 'MAX_PARTITION_KEY_LENGTH' constants to the top of the function so they are easily accessible.
+// Removing the unnecessary 'let candidate' declaration and initializing 'candidate' with the 'TRIVIAL_PARTITION_KEY' value at the beginning of the function and we don't need one more assignment anymore.
+// Checking if the 'candidate' is not a string before stringifying it.
